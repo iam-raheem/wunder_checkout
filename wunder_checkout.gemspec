@@ -6,8 +6,8 @@ require "wunder_checkout/version"
 Gem::Specification.new do |spec|
   spec.name          = "wunder_checkout"
   spec.version       = WunderCheckout::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Raheem Shaik"]
+  spec.email         = ["shaikraheem141@gmail.com"]
 
   spec.summary       = %q{Implementing checkout system}
   spec.description   = %q{A checkout system where promotions can be applied based on the cart itesms & price.}
