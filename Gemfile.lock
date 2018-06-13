@@ -31,5 +31,8 @@ DEPENDENCIES
   rspec (~> 3.0)
   wunder_checkout!
 
+RUBY VERSION
+   ruby 2.5.1p57
+
 BUNDLED WITH
    1.16.2
