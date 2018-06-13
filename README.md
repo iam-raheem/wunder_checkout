@@ -53,6 +53,14 @@ Total with promotions => 51.16 €
 *******************************
 ```
 
+## Promotional Rules Applied
+
+```ruby
+1. If you buy 2 or more pizza’s then the price drops to €3.99.
+2. If you buy more than 5 products then the price of each product will less by €0.5
+3. If you spend over €30, then you get 10% off your purchase.
+```
+
 ## To modify the configurations for different use cases of different products
 
 ```ruby
