@@ -1,43 +1,83 @@
-# WunderCheckout
+# Wunder Checkout System
+This is a basic checkout ruby system which calculates the cost of cart based on different promotions applied on the products or cart.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wunder_checkout`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Installation Instructions
 
-TODO: Delete this and the text above, and describe your gem
+Install Ruby 2.4.x or Higher Version
 
-## Installation
-
-Add this line to your application's Gemfile:
+Clone the repository & Setup:
 
 ```ruby
-gem 'wunder_checkout'
+$ git clone https://github.com/srinu0541/wunder_checkout.git
+$ cd wunder_checkout
+$ bundle install
 ```
 
-And then execute:
+## Task
 
-    $ bundle
+Sample Products
 
-Or install it yourself as:
-
-    $ gem install wunder_checkout
+```ruby
+Product code  | Name               | Price
+---------------------------------------------
+001           | Curry Sauce        | 1.95 €
+002           | Pizza              | 5.99 €
+003           | Men T-shirt        | 25.00 €
+004           | Dettol Soap        | 8.41 €
+005           | Trekking Backpack  | 16.51 €
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+$ run checkout
+```
+Output of the above task:
 
-## Development
+```ruby
+Use Case #1:
+Cart: 001,002,003
+Total with promotions => 29.65 €
+*******************************
+Use Case #2:
+Cart: 002,001,002
+Total with promotions => 9.93 €
+*******************************
+Use Case #3:
+Cart: 002,001,002,003
+Total with promotions => 31.44 €
+*******************************
+Use Case #4:
+Cart: 001,002,003,004,002,005
+Total with promotions => 51.16 €
+*******************************
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## To modify the configurations for different use cases of different products
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+$ sudo vim Rakefile
+```
 
-## Contributing
+To add new products, just append your new product details to the below input list items as an array
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/wunder_checkout. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+```ruby
+input_list_items = [
+  ['001', 'Curry Sauce', 1.95],
+  ['002', 'Pizza', 5.99],
+  ['003', 'Men T-Shirt', 25.00],
+  ['004', 'Dettol Soap', 8.41],
+  ['005', 'Trekking Backpack', 16.51]
+]
+```
 
-## License
+To add new use case, just append your new use case details to the below use cases as an array
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the WunderCheckout project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/wunder_checkout/blob/master/CODE_OF_CONDUCT.md).
+```ruby
+use_cases = [
+  ['001', '002', '003'],
+  ['002', '001', '002'],
+  ['002', '001', '002', '003'],
+  ['001', '002', '003', '004', '002', '005']
+]
+```

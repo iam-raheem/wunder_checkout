@@ -50,14 +50,15 @@ task :checkout do
   use_cases.each.with_index(1) do |uc, uc_i|
     checkout = WunderCheckout.new(promotion_rules, products: products)
     
-    puts "Use Case ##{uc_i}: #{uc.inspect}"
+    puts "Use Case ##{uc_i}:"
+    puts "Cart: #{uc.join(',')}"
     
     uc.each do |v|
       checkout.scan(v)
     end
 
     price = checkout.total_with_promotions
-    puts "Total with promotions => " + price
+    puts "Total with promotions => " + price + " €"
     puts "*******************************"
   end
 end

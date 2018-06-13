@@ -14,7 +14,7 @@ class WunderCheckout
   end
 
   def total_with_promotions
-    '£%.2f' % @cart.total(@order)
+    '%.2f' % @cart.total(@order)
   end
 
   private
