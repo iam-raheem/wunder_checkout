@@ -27,32 +27,6 @@ Product code  | Name               | Price
 005           | Trekking Backpack  | 16.51 €
 ```
 
-## Usage
-
-```ruby
-$ run checkout
-```
-Output of the above task:
-
-```ruby
-Use Case #1:
-Cart: 001,002,003
-Total with promotions => 29.65 €
-*******************************
-Use Case #2:
-Cart: 002,001,002
-Total with promotions => 9.93 €
-*******************************
-Use Case #3:
-Cart: 002,001,002,003
-Total with promotions => 31.44 €
-*******************************
-Use Case #4:
-Cart: 001,002,003,004,002,005
-Total with promotions => 51.16 €
-*******************************
-```
-
 ## Promotional Rules Applied
 
 ```ruby
@@ -88,4 +62,38 @@ use_cases = [
   ['002', '001', '002', '003'],
   ['001', '002', '003', '004', '002', '005']
 ]
+```
+
+## Usage
+
+```ruby
+$ run checkout
+```
+Output of the task with above configurations:
+
+```ruby
+Use Case #1:
+Cart: 001,002,003
+Total with promotions => 29.65 €
+*******************************
+Use Case #2:
+Cart: 002,001,002
+Total with promotions => 9.93 €
+*******************************
+Use Case #3:
+Cart: 002,001,002,003
+Total with promotions => 31.44 €
+*******************************
+Use Case #4:
+Cart: 001,002,003,004,002,005
+Total with promotions => 51.16 €
+*******************************
+```
+
+## Test Cases
+
+Test cases writen for major module, which is Cart to calculate based on all 3 kinds of promotions
+
+```ruby
+$ rake spec
 ```
