@@ -97,3 +97,30 @@ Test cases writen for major module, which is Cart to calculate based on all 3 ki
 ```ruby
 $ rake spec
 ```
+
+## Implementation Process
+
+```ruby
+1. Product class (lib/product.rb) is created to maintain each product object.
+
+2. Three different promotion classes created for each rule.
+      - EachProductAdjustment class (lib/promotions/each_product_adjustment.rb) to enable the rule -> Buy more than 5 products then the price of each product will less by €0.5
+      - ProductCountAdjustment class (lib/promotions/product_count_adjustment.rb) to enable the rule -> Buy 2 or more pizza’s then the price drops to €3.99.
+      - WholeOrderAdjustment class (lib/promotions/whole_order_adjustment.rb) to enable the rule -> Spend over €30, then you get 10% off your purchase.
+   - In all the above classes, 'apply' method will check whether the cart is applicable for the respective individual promotion & will return the promotion value if applicable
+
+3 - Cart class (lib/cart.rb) is created to apply all the applicable promotions to the order and maintain the totals.
+
+4 - WunderCheckout class (lib/wunder_checkout.rb) is created to scan the valid products & call to cart totals.
+
+4 - Test cases written using rspec for all the major implementations: valid type of cart promotions, product.
+
+5 - Rake file created to with the below flow:
+      - Require all the lib classes
+      - Adding list of products as an array. You can add your own here.
+      - Creating product objects array for each product.
+      - Creating promotion objects for each promotion added.
+      - Adding all the promotion objects to an array.
+      - Creating an array with all the different use cases needed to pass the promotions
+      - Scanning the products based on product code & fetching the totals with promotions applied.
+```
