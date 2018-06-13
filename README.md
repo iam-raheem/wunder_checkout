@@ -115,7 +115,7 @@ $ rake spec
 
 4 - Test cases written using rspec for all the major implementations: valid type of cart promotions, product.
 
-5 - Rake file created to with the below flow:
+5 - Rake file created to execute the checkout system with below flow:
       - Require all the lib classes
       - Adding list of products as an array. You can add your own here.
       - Creating product objects array for each product.
